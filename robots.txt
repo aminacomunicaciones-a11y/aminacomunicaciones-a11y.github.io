@@ -1,0 +1,8 @@
+# Este SI lo leen los rastreadores: vive en la raiz del dominio.
+# El que hay dentro de /caostotal-neon/ no cuenta (robots.txt solo vale en la
+# raiz), y por eso su linea Sitemap nunca llego a Google.
+User-agent: *
+Allow: /
+
+Sitemap: https://aminacomunicaciones-a11y.github.io/sitemap.xml
+Sitemap: https://aminacomunicaciones-a11y.github.io/caostotal-neon/sitemap.xml

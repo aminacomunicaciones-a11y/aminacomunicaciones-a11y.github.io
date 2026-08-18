@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ESTE TITULO ES EL NOMBRE DEL SITIO. Google lo lee de la portada del
+     dominio y lo enseña encima de TODOS los resultados de
+     aminacomunicaciones-a11y.github.io. Antes esta direccion daba el 404 de
+     GitHub y por eso salia "GitHub Pages documentation". No cambiarlo sin
+     querer cambiar como nos llama Google. -->
+<title>Amina Juegos</title>
+<meta name="description" content="Amina Juegos es un proyecto independiente de videojuegos para Android. Aquí están nuestros juegos, empezando por Caos Total: Neon.">
+<link rel="canonical" href="https://aminacomunicaciones-a11y.github.io/">
+<meta name="author" content="Amina Juegos">
+<meta name="theme-color" content="#05070d">
+
+<!-- El icono del dominio. Ademas del <link>, hay una copia en /favicon.ico
+     en la raiz: es donde lo busca Google para los resultados de busqueda. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="img/icon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amina Juegos">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Amina Juegos">
+<meta property="og:description" content="Proyecto independiente de videojuegos para Android. Empezando por Caos Total: Neon.">
+<meta property="og:url" content="https://aminacomunicaciones-a11y.github.io/">
+<meta property="og:image" content="https://aminacomunicaciones-a11y.github.io/img/icon-512.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aminacomunicaciones-a11y.github.io/#sitio",
+      "name": "Amina Juegos",
+      "alternateName": "Amina",
+      "url": "https://aminacomunicaciones-a11y.github.io/",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://aminacomunicaciones-a11y.github.io/#amina" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://aminacomunicaciones-a11y.github.io/#amina",
+      "name": "Amina Juegos",
+      "alternateName": "Amina",
+      "url": "https://aminacomunicaciones-a11y.github.io/",
+      "logo": "https://aminacomunicaciones-a11y.github.io/img/icon-512.png",
+      "email": "amina.comunicaciones@gmail.com"
+    }
+  ]
+}
+</script>
+
+<style>
+  /* Mismos tokens que la web del juego, para que el dominio entero se lea
+     como la misma marca. Sin fuentes, scripts ni CDN externos. */
+  :root {
+    --fondo: #05070d; --papel: #0d1220; --papel2: #101828;
+    --tinta: #dbe4f0; --suave: #8fa0b8; --linea: rgba(53, 224, 242, .18);
+    --neon: #35e0f2; --lila: #b45cff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    padding: 3rem 1.25rem;
+    background:
+      radial-gradient(60rem 30rem at 85% -5%, rgba(180, 92, 255, .12), transparent 60%),
+      radial-gradient(70rem 34rem at 10% 0%, rgba(53, 224, 242, .13), transparent 55%),
+      var(--fondo);
+    color: var(--tinta);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 47px, rgba(53, 224, 242, .04) 47px 48px),
+      repeating-linear-gradient(90deg, transparent 0 47px, rgba(53, 224, 242, .04) 47px 48px);
+  }
+  .hoja { max-width: 34rem; width: 100%; text-align: center; }
+  .marca {
+    width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0 auto 1.5rem;
+    border: 1px solid var(--linea);
+    box-shadow: 0 12px 44px rgba(180, 92, 255, .3);
+  }
+  h1 {
+    margin: 0 0 .6rem; font-size: clamp(2rem, 7vw, 3rem); line-height: 1.1; font-weight: 800;
+    letter-spacing: -.01em;
+    background: linear-gradient(92deg, var(--neon) 8%, #cfefff 45%, var(--lila) 92%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lema { margin: 0 0 2.5rem; color: var(--suave); }
+  h2 {
+    font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--suave); margin: 0 0 .9rem; font-weight: 700;
+  }
+  .juego {
+    display: block; text-decoration: none; color: inherit; text-align: left;
+    border: 1px solid var(--linea); border-radius: 14px; overflow: hidden;
+    background: linear-gradient(180deg, var(--papel2), var(--papel));
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .juego:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(53, 224, 242, .22); }
+  .juego img { display: block; width: 100%; height: auto; }
+  .juego .texto { padding: 1.1rem 1.25rem; }
+  .juego h3 { margin: 0 0 .25rem; font-size: 1.15rem; color: #eaf3ff; }
+  .juego p { margin: 0; color: var(--suave); font-size: .93rem; }
+  .juego .ir { color: var(--neon); font-weight: 700; }
+  footer {
+    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--linea);
+    color: var(--suave); font-size: .88rem;
+  }
+  footer a { color: var(--neon); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<main class="hoja">
+  <img class="marca" src="img/icon-192.png" width="96" height="96"
+       alt="Logotipo de Amina Juegos: una letra A de neón sobre fondo morado.">
+  <h1>Amina Juegos</h1>
+  <p class="lema">Desarrollo independiente de videojuegos para Android.</p>
+
+  <h2>Nuestros juegos</h2>
+  <a class="juego" href="/caostotal-neon/">
+    <img src="img/banner.webp" width="1024" height="500" loading="lazy"
+         alt="Banner de Caos Total: Neon: el título en neón junto a la mascota, un pulpo coronado.">
+    <div class="texto">
+      <h3>Caos Total: Neon</h3>
+      <p>Survival arcade de oleadas con estética neón. <span class="ir">Ver la web del juego →</span></p>
+    </div>
+  </a>
+
+  <footer>
+    Contacto: <a href="mailto:amina.comunicaciones@gmail.com">amina.comunicaciones@gmail.com</a><br>
+    © 2026 Amina Juegos
+  </footer>
+</main>
+
+</body>
+</html>
