@@ -81,9 +81,14 @@
   }
   .hoja { max-width: 34rem; width: 100%; text-align: center; }
   .marca {
-    width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0 auto 1.5rem;
-    border: 1px solid var(--linea);
-    box-shadow: 0 12px 44px rgba(180, 92, 255, .3);
+    width: 300px; max-width: 82%; height: auto; display: block; margin: 0 auto 1.25rem;
+    filter: drop-shadow(0 0 16px rgba(53, 224, 242, .3));
+  }
+  /* El logo ya dibuja el nombre: el h1 se queda para Google y los lectores de
+     pantalla, pero no se repite en pantalla (mismo truco que la web del juego). */
+  .oculto-visual {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
   }
   h1 {
     margin: 0 0 .6rem; font-size: clamp(2rem, 7vw, 3rem); line-height: 1.1; font-weight: 800;
@@ -119,9 +124,9 @@
 <body>
 
 <main class="hoja">
-  <img class="marca" src="img/icon-192.png" width="96" height="96"
-       alt="Logotipo de Aminan: una letra A de neón sobre fondo morado.">
-  <h1>Aminan</h1>
+  <img class="marca" src="img/logo-aminan.png" width="988" height="208"
+       alt="Aminan: el nombre en letras de neón cian y magenta.">
+  <h1 class="oculto-visual">Aminan</h1>
   <p class="lema">Desarrollo independiente de videojuegos para Android.</p>
 
   <h2>Nuestros juegos</h2>
