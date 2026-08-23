@@ -31,7 +31,7 @@ cosas feas en los resultados de Google de **todo** el dominio:
 
 | Fichero | Para qué |
 |---|---|
-| `index.html` | La portada: marca, y tarjeta enlazando a la web de Caos Total: Neon |
+| `index.html` | La portada: marca, y tarjeta enlazando a la web de Caos Total Neon |
 | `favicon.ico` | En la raíz a propósito, para Google |
 | `img/` | El logotipo en varios tamaños y el banner del juego |
 | `robots.txt`, `sitemap.xml` | Indexación de todo el dominio |
