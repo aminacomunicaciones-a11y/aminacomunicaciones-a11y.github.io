@@ -124,6 +124,11 @@
   .juego h3 { margin: 0 0 .25rem; font-size: 1.15rem; color: #eaf3ff; }
   .juego p { margin: 0; color: var(--suave); font-size: .93rem; }
   .juego .ir { color: var(--neon); font-weight: 700; }
+  /* Enlace a la ficha de Play, FUERA de la tarjeta: la tarjeta ya es un <a> y
+     un enlace no puede ir dentro de otro. */
+  .tienda { margin: .9rem 0 0; font-size: .95rem; }
+  .tienda a { color: var(--neon); font-weight: 700; text-decoration: none; }
+  .tienda a:hover { text-decoration: underline; }
   footer {
     margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--linea);
     color: var(--suave); font-size: .88rem;
@@ -146,9 +151,10 @@
          alt="Banner de Caos Total Neon: el título en neón junto a la mascota, un pulpo coronado.">
     <div class="texto">
       <h3>Caos Total Neon</h3>
-      <p>Survival arcade de oleadas con estética neón: un mundo de magos se venga de los aliens que lo arrasaron. <span class="ir">Ver la web del juego →</span></p>
+      <p>Roguelike de supervivencia por oleadas con estética neón: un mundo de magos se venga de los aliens que lo arrasaron. <span class="ir">Ver la web del juego →</span></p>
     </div>
   </a>
+  <p class="tienda"><a href="https://play.google.com/store/apps/details?id=com.caostotalgames.caostotal">Ya en Google Play: descárgalo gratis →</a></p>
 
   <footer>
     Contacto: <a href="mailto:aminansoporte@gmail.com">aminansoporte@gmail.com</a><br>
