@@ -27,7 +27,6 @@
   function start() {
     if (body.classList.contains('go')) return;
     body.classList.add('go');
-    body.classList.remove('locked');
     if (boot) boot.classList.add('off');
     try { sessionStorage.setItem('il-boot', '1'); } catch (e) {}
     // el título cae letra a letra y, cuando aterriza la última, el flash y la sacudida
@@ -47,10 +46,8 @@
   }
   if (reduce || seen || !boot) {
     root.classList.add('no-boot');
-    body.classList.remove('locked');
     if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', start); else start();
   } else {
-    body.classList.add('locked');
     var msgs = ['Preparando la sala de ensayo…', 'Calibrando la barrera…', 'Contando oficinistas…', 'Abriendo la alcantarilla…'];
     var m = $('#bootMsg'), k = 0;
     requestAnimationFrame(function () { boot.classList.add('run'); });
@@ -88,6 +85,11 @@
     box.insertBefore(v, box.firstChild);
     return v;
   }
+  function unload(box) {
+    var v = $('video', box); if (!v) return;
+    try { v.pause(); v.removeAttribute('src'); v.load(); } catch (e) {}
+    v.remove(); delete box.dataset.built; box.classList.remove('playing');
+  }
   function tryPlay(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
   function playBtn(box) {
     var b = d.createElement('button'); b.className = 'play'; b.type = 'button';
@@ -104,9 +106,15 @@
     es.forEach(function (e) {
       var box = e.target, v = $('video', box);
       if (e.isIntersecting) {
+        clearTimeout(box._drop);
         if (!v) v = build(box);
         if (!v.controls) tryPlay(v);
-      } else if (v && !v.paused && !v.controls) { v.pause(); }
+      } else if (v && !v.controls) {
+        v.pause();
+        // lejos de la pantalla, el vídeo se suelta del todo: en un móvil cada <video> vivo cuesta memoria
+        clearTimeout(box._drop);
+        box._drop = setTimeout(function () { unload(box); }, 2500);
+      }
     });
   }, { rootMargin: '200px 0px' }) : null;
   vids.forEach(function (box) {
