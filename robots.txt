@@ -6,3 +6,5 @@ Allow: /
 
 Sitemap: https://aminacomunicaciones-a11y.github.io/sitemap.xml
 Sitemap: https://aminacomunicaciones-a11y.github.io/caostotal-neon/sitemap.xml
+
+Sitemap: https://aminacomunicaciones-a11y.github.io/impactolab/sitemap.xml
